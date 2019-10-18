@@ -29,10 +29,11 @@ public class ComboBoxHandler implements ActionListener {
 
 
     /**
-     * Selcon la valeur selectionner ... cette methode change un arraylite a partir de la classe Unites
+     * Selon la valeur selectionner ... cette methode change un arraylite a partir de la classe Unites
      * pour alimenter les combobox de selections des unites
      * */
     @Override
+
     public void actionPerformed(ActionEvent e) {
         String str = (String) selectType.getSelectedItem();
 
@@ -59,6 +60,13 @@ public class ComboBoxHandler implements ActionListener {
                 selectFrom.setModel(new DefaultComboBoxModel(Unites.TEMPERATURE.toArray()));
                 break;
             }
+            default:
+            {
+                selectTo.setModel(new DefaultComboBoxModel());
+                selectFrom.setModel(new DefaultComboBoxModel());
+                break;
+            }
+
 
         }
 

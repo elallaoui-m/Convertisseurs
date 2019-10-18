@@ -15,16 +15,16 @@ public class Unites {
     public static ArrayList<String> DISTANCE  ;
     public static ArrayList<String> MASSE ;
     public static ArrayList<String> TEMPERATURE ;
-    public static String[] Mesures = {"Distance","Masse","Temperature"};
+    public static String[] Mesures = {"--Select--","Distance","Masse","Temperature"};
 
     static
     {
         //Distance
         DISTANCE = new ArrayList<>();
-        DISTANCE.add("mm");
+        //DISTANCE.add("mm");
         DISTANCE.add("cm");
         DISTANCE.add("dm");
-        DISTANCE.add("M");
+        DISTANCE.add("m");
         DISTANCE.add("dam");
         DISTANCE.add("hm");
         DISTANCE.add("km");
@@ -34,7 +34,7 @@ public class Unites {
 
         //Masse
         MASSE = new ArrayList<>();
-        MASSE.add("mg");
+        //MASSE.add("mg");
         MASSE.add("g");
         MASSE.add("kg");
         MASSE.add("t");

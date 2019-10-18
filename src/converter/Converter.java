@@ -6,7 +6,6 @@ package converter;
 import javax.swing.*;
 import java.awt.*;
 
-
 public class Converter extends JFrame {
 
     private  JTextField from;
@@ -34,11 +33,6 @@ public class Converter extends JFrame {
         selectType = new JComboBox(Unites.Mesures);
         selectTo = new JComboBox();
         selectFrom = new JComboBox();
-
-        //Ajout de l'action listener responsable de la gestion de changement des mesures volu
-        //voir la classe 'ComboBoxHandler'
-        selectType.addActionListener(new ComboBoxHandler(selectType,selectFrom,selectTo));
-
 
         /**
          * gestion des layout ... creation du graphic convenable
@@ -87,6 +81,22 @@ public class Converter extends JFrame {
         pack();
         //Center dans l'ecran
         setLocationRelativeTo(null);
+
+
+        /**
+         * Ajout des Listener pour la gestion des differents events
+         */
+
+        //Ajout de l'action listener responsable de la gestion de changement des mesures volu
+        //voir la classe 'ComboBoxHandler'
+        selectType.addActionListener(new ComboBoxHandler(selectType,selectFrom,selectTo));
+        //selectType.addActionListener(new TextChangeHandler(from,to,selectType,selectFrom,selectTo));
+        selectFrom.addActionListener(new TextChangeHandler(from,to,selectType,selectFrom,selectTo));
+        selectTo.addActionListener(new TextChangeHandler(from,to,selectType,selectFrom,selectTo));
+
+
+        from.addKeyListener(new TextChangeHandler(from,to,selectType,selectFrom,selectTo));
+        to.addKeyListener(new TextChangeHandler(to,from,selectType,selectTo,selectFrom));
 
     }
 
